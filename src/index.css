@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Dark theme (default) */
+:root {
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+  --primary: #F59E0B;
+  --primary-foreground: #0F172A;
+  --secondary: #D97706;
+  --secondary-foreground: #F8FAFC;
+  --card: #1E293B;
+  --card-foreground: #F8FAFC;
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+  --accent: #334155;
+  --accent-foreground: #F8FAFC;
+  --border: #334155;
+  --input: #334155;
+  --ring: #F59E0B;
+  --destructive: #EF4444;
+  --destructive-foreground: #F8FAFC;
+  --radius: 0.75rem;
+}
+
+/* Light theme */
+.light {
+  --background: #F5F0E8;
+  --foreground: #4A3520;
+  --primary: #C4862A;
+  --primary-foreground: #F5F0E8;
+  --secondary: #B8860B;
+  --secondary-foreground: #F5F0E8;
+  --card: #EDE7DB;
+  --card-foreground: #4A3520;
+  --muted: #D4CCBE;
+  --muted-foreground: #7A6B5A;
+  --accent: #D4CCBE;
+  --accent-foreground: #4A3520;
+  --border: #D4CCBE;
+  --input: #D4CCBE;
+  --ring: #C4862A;
+  --destructive: #EF4444;
+  --destructive-foreground: #F5F0E8;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
