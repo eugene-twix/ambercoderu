@@ -100,9 +100,9 @@ export const conferences: Conference[] = [
           },
           {
             time: "12:00–12:50",
-            title: "QA в мобильном геймдеве: от казуальных игр до мидкора",
-            speaker: "Сергей Сподрин",
-            role: "QA Lead/Senior QA, Rightsoft Labs",
+            title: "Теология вымышленных миров",
+            speaker: "Андрей Бабич",
+            role: "Game Designer",
           },
           {
             time: "13:00–13:50",
@@ -118,9 +118,9 @@ export const conferences: Conference[] = [
           },
           {
             time: "16:00–16:50",
-            title: "Теология вымышленных миров",
-            speaker: "Андрей Бабич",
-            role: "Game Designer",
+            title: "QA в мобильном геймдеве: от казуальных игр до мидкора",
+            speaker: "Сергей Сподрин",
+            role: "QA Lead/Senior QA, Rightsoft Labs",
           },
           {
             time: "17:00–17:50",
