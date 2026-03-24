@@ -133,9 +133,9 @@ export const conferences: Conference[] = [
     ],
     activities: [
       { title: "Турнир по CS2", description: "Киберспортивный турнир для участников конференции", url: "https://t.me/ambercode/571" },
-      { title: "Зона нетворкинга", description: "13 столов для общения + @super_meet_bot в Telegram", url: "https://t.me/ambercode/557" },
+      { title: "Зона нетворкинга", description: "13 столов для общения + @super_meet_bot в Telegram", url: "https://t.me/ambercode/576" },
       { title: "Арт-галерея", description: "Выставка работ участников сообщества", url: "https://t.me/ambercode/557" },
-      { title: "Мастер-классы по покраске миниатюр", description: "Интерактивные воркшопы для всех желающих", url: "https://t.me/ambercode/557" },
+      { title: "Мастер-классы по покраске миниатюр", description: "Интерактивные воркшопы для всех желающих", url: "https://t.me/ambercode/555" },
       { title: "Фудзона", description: "Еда и напитки на территории площадки" },
     ],
   },
