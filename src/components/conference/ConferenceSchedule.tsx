@@ -2,7 +2,7 @@ import { useState } from "react"
 import type { Conference } from "@/data/conferences"
 import { Card, CardContent } from "@/components/ui/card"
 
-function ScheduleList({ schedule }: { schedule: { time: string; title: string; speaker?: string; role?: string }[] }) {
+function ScheduleList({ schedule }: { schedule: { time: string; title: string; speaker?: string; role?: string; registrationUrl?: string }[] }) {
   return (
     <ul className="space-y-3">
       {schedule.map((item, i) => (
@@ -15,6 +15,16 @@ function ScheduleList({ schedule }: { schedule: { time: string; title: string; s
                 {item.speaker}
                 {item.role && <span className="text-xs"> — {item.role}</span>}
               </p>
+            )}
+            {item.registrationUrl && (
+              <a
+                href={item.registrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-1 px-2.5 py-0.5 text-xs font-medium rounded bg-primary/15 text-primary hover:bg-primary/25 transition-colors"
+              >
+                Записаться — мест ограничено
+              </a>
             )}
           </div>
         </li>

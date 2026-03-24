@@ -9,6 +9,7 @@ export interface ScheduleItem {
   title: string
   speaker?: string
   role?: string
+  registrationUrl?: string
 }
 
 export interface Track {
@@ -56,6 +57,7 @@ export const conferences: Conference[] = [
             title: "Как построить ИИ стартап, заменив 70% операционки ИИ",
             speaker: "Роман Тян",
             role: "Основатель, Wegosty.ru, NRG Ventures",
+            registrationUrl: "https://forms.yandex.ru/u/69bd0e101f1eb5626ab3d8bf/",
           },
           {
             time: "13:00–13:50",
@@ -68,6 +70,7 @@ export const conferences: Conference[] = [
             title: "Открытый диалог",
             speaker: "Likoris",
             role: "Видеоблогер",
+            registrationUrl: "https://forms.yandex.ru/u/69bd0da6d046884e1a8f246c/",
           },
           {
             time: "15:00–15:50",
