@@ -1,3 +1,8 @@
+export interface Activity {
+  title: string
+  description?: string
+}
+
 export interface ScheduleItem {
   time: string
   title: string
@@ -21,6 +26,7 @@ export interface Conference {
   locationUrl?: string
   schedule: ScheduleItem[]
   tracks?: Track[]
+  activities?: Activity[]
 }
 
 export const conferences: Conference[] = [
@@ -34,6 +40,47 @@ export const conferences: Conference[] = [
     locationUrl: "https://yandex.com/maps/22/kaliningrad/?ll=20.485415%2C54.749315&mode=poi&poi%5Bpoint%5D=20.485519%2C54.749184&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D16684439021&z=17",
     schedule: [],
     tracks: [
+      {
+        name: "ЛЕКТОРИЙ РАЗРАБОТКИ ИГР",
+        capacity: 50,
+        schedule: [
+          {
+            time: "11:00–11:50",
+            title: "Как не потерять игрока за пять минут: дизайн туториалов, которые вовлекают",
+            speaker: "Роман Васильев",
+            role: "UI-Artist, G5 Games",
+          },
+          {
+            time: "12:00–12:50",
+            title: "QA в мобильном геймдеве: от казуальных игр до мидкора",
+            speaker: "Сергей Сподрин",
+            role: "QA Lead/Senior QA, Rightsoft Labs",
+          },
+          {
+            time: "13:00–13:50",
+            title: "Когда первая визуальная новелла становится последней: о пороге входа и реальности рынка",
+            speaker: "Анна Емельянова",
+            role: "Level Designer, G5 Games",
+          },
+          {
+            time: "15:00–15:50",
+            title: "Немой диалог: как игра разговаривает с игроком через движение",
+            speaker: "Анастасия Козлова",
+            role: "2D Animator, KB Production — Союзмультфильм",
+          },
+          {
+            time: "16:00–16:50",
+            title: "Теология вымышленных миров",
+            speaker: "Андрей Бабич",
+            role: "Game Designer",
+          },
+          {
+            time: "17:00–17:50",
+            title: "3D и печать: диалог художника с инженером",
+            speaker: "Алексей Красовский (Мастер Макет) и Никита Кондрашов (3DPR)",
+          },
+        ],
+      },
       {
         name: "ЛЕКТОРИЙ ИТ/БИЗНЕС",
         capacity: 55,
@@ -82,47 +129,13 @@ export const conferences: Conference[] = [
           },
         ],
       },
-      {
-        name: "ЛЕКТОРИЙ РАЗРАБОТКИ ИГР",
-        capacity: 50,
-        schedule: [
-          {
-            time: "11:00–11:50",
-            title: "Как не потерять игрока за пять минут: дизайн туториалов, которые вовлекают",
-            speaker: "Роман Васильев",
-            role: "UI-Artist, G5 Games",
-          },
-          {
-            time: "12:00–12:50",
-            title: "QA в мобильном геймдеве: от казуальных игр до мидкора",
-            speaker: "Сергей Сподрин",
-            role: "QA Lead/Senior QA, Rightsoft Labs",
-          },
-          {
-            time: "13:00–13:50",
-            title: "Когда первая визуальная новелла становится последней: о пороге входа и реальности рынка",
-            speaker: "Анна Емельянова",
-            role: "Level Designer, G5 Games",
-          },
-          {
-            time: "15:00–15:50",
-            title: "Немой диалог: как игра разговаривает с игроком через движение",
-            speaker: "Анастасия Козлова",
-            role: "2D Animator, KB Production — Союзмультфильм",
-          },
-          {
-            time: "16:00–16:50",
-            title: "Теология вымышленных миров",
-            speaker: "Андрей Бабич",
-            role: "Game Designer",
-          },
-          {
-            time: "17:00–17:50",
-            title: "3D и печать: диалог художника с инженером",
-            speaker: "Алексей Красовский (Мастер Макет) и Никита Кондрашов (3DPR)",
-          },
-        ],
-      },
+    ],
+    activities: [
+      { title: "Турнир по CS2", description: "Киберспортивный турнир для участников конференции" },
+      { title: "Зона нетворкинга", description: "13 столов для общения + @super_meet_bot в Telegram" },
+      { title: "Арт-галерея", description: "Выставка работ участников сообщества" },
+      { title: "Мастер-классы по покраске миниатюр", description: "Интерактивные воркшопы для всех желающих" },
+      { title: "Фудзона", description: "Еда и напитки на территории площадки" },
     ],
   },
 ]
