@@ -25,7 +25,7 @@ export function QRSection() {
             level="M"
             className="w-[200px] h-[200px] sm:w-[256px] sm:h-[256px]"
           />
-          <p className="text-sm text-muted-foreground">Scan to join</p>
+          <p className="text-sm text-muted-foreground">Сканируй, чтобы присоединиться</p>
         </CardContent>
       </Card>
 
@@ -35,7 +35,7 @@ export function QRSection() {
         rel="noopener noreferrer"
         className={cn(buttonVariants({ size: "lg" }), "gap-2")}
       >
-        Open in Telegram
+        Открыть в Telegram
         <ExternalLink className="h-4 w-4" />
       </a>
     </div>
