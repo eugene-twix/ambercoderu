@@ -11,7 +11,18 @@ export function ConferenceActivities({ conference }: { conference: Conference })
         <ul className="space-y-3">
           {conference.activities.map((activity, i) => (
             <li key={i}>
-              <p className="text-foreground font-medium">{activity.title}</p>
+              {activity.url ? (
+                <a
+                  href={activity.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground font-medium hover:text-primary transition-colors"
+                >
+                  {activity.title}
+                </a>
+              ) : (
+                <p className="text-foreground font-medium">{activity.title}</p>
+              )}
               {activity.description && (
                 <p className="text-sm text-muted-foreground">{activity.description}</p>
               )}
