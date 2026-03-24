@@ -24,7 +24,23 @@ export function ConferenceActivities({ conference }: { conference: Conference })
                 <p className="text-foreground font-medium">{activity.title}</p>
               )}
               {activity.description && (
-                <p className="text-sm text-muted-foreground">{activity.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {activity.description.split(/(@\w+)/g).map((part, j) =>
+                    part.startsWith("@") ? (
+                      <a
+                        key={j}
+                        href={`https://t.me/${part.slice(1)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        {part}
+                      </a>
+                    ) : (
+                      part
+                    )
+                  )}
+                </p>
               )}
             </li>
           ))}
