@@ -2,6 +2,7 @@ export interface Activity {
   title: string
   description?: string
   url?: string
+  image?: string
 }
 
 export interface ScheduleItem {
@@ -165,7 +166,7 @@ export const conferences: Conference[] = [
       },
     ],
     activities: [
-      { title: "Турнир по CS2", description: "Киберспортивный турнир для участников конференции", url: "https://t.me/ambercode/581" },
+      { title: "Турнир по CS2", description: "Киберспортивный турнир для участников конференции. Формат: MR13, BO1, Single Elimination + матч за 3-е место. Начало в 10:30", url: "https://t.me/ambercode/590", image: "/cs2-bracket.jpg" },
       { title: "Зона нетворкинга", description: "13 столов для общения + @super_meet_bot в Telegram", url: "https://t.me/ambercode/576" },
       { title: "Арт-галерея", description: "Выставка работ участников сообщества", url: "https://t.me/ambercode/557" },
       { title: "Мастер-классы по покраске миниатюр", description: "Интерактивные воркшопы для всех желающих", url: "https://t.me/ambercode/555" },
