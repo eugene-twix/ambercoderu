@@ -29,19 +29,41 @@ export interface Conference {
   schedule: ScheduleItem[]
   tracks?: Track[]
   activities?: Activity[]
+  scheduleImage?: string
 }
 
 export const conferences: Conference[] = [
   {
     slug: "амберконф-весна-2026",
     title: "АмберКонф Весна 2026",
-    date: "Весна 2026",
+    date: "28 марта 2026",
     description: "Для программистов, разработчиков игр и всех, у кого с информационными технологиями по любви",
     telegramPostUrl: "https://t.me/ambercode/555",
     location: "ДС «Янтарный», ул. Согласия, 39",
     locationUrl: "https://yandex.com/maps/22/kaliningrad/?ll=20.485415%2C54.749315&mode=poi&poi%5Bpoint%5D=20.485519%2C54.749184&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D16684439021&z=17",
+    scheduleImage: "/schedule-spring-2026.png",
     schedule: [],
     tracks: [
+      {
+        name: "ВХОДНАЯ ЗОНА/ФОЙЕ",
+        schedule: [
+          { time: "10:00", title: "Начало регистрации" },
+          { time: "10:00–12:00", title: "Кофе-брейк зона" },
+          { time: "12:00–18:00", title: "Зона общения" },
+        ],
+      },
+      {
+        name: "ЦОКОЛЬНОЕ ФОЙЕ",
+        schedule: [
+          { time: "10:00", title: "Приветственное слово" },
+          { time: "10:00–18:00", title: "Гардероб" },
+          { time: "10:00–18:00", title: "Магазины" },
+          { time: "10:30", title: "Открытие галереи" },
+          { time: "13:00–16:00", title: "Живая роспись фигурок" },
+          { time: "12:00–17:00", title: "Настольные игры" },
+          { time: "18:30", title: "Награждение и закрытие" },
+        ],
+      },
       {
         name: "ЛЕКТОРИЙ ИТ/БИЗНЕС",
         capacity: 55,
@@ -131,6 +153,14 @@ export const conferences: Conference[] = [
             title: "3D и печать: диалог художника с инженером",
             speaker: "Алексей Красовский (Мастер Макет) и Никита Кондрашов (3DPR)",
           },
+        ],
+      },
+      {
+        name: "ЗАЛ ФИДЖИТАЛ",
+        schedule: [
+          { time: "10:30", title: "Начало турнира по CS2" },
+          { time: "16:30", title: "Полуфинал турнира по CS2" },
+          { time: "17:30", title: "Финал турнира по CS2" },
         ],
       },
     ],
