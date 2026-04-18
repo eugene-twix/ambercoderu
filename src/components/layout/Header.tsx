@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react"
+import { createPortal } from "react-dom"
 import { Link, useLocation } from "react-router-dom"
 import { Sparkles, ChevronDown, Menu, X, Archive, CalendarDays, Star } from "lucide-react"
 import { ThemeToggle } from "@/components/theme/ThemeToggle"
@@ -125,8 +126,8 @@ export function Header() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden fixed inset-0 z-50 bg-background/95 backdrop-blur-lg animate-fade-in">
+      {mobileOpen && createPortal(
+        <div className="md:hidden fixed inset-0 z-50 bg-background animate-fade-in">
           <div className="flex items-center justify-between h-14 px-4 border-b border-border">
             <span
               className="text-sm text-primary tracking-wider"
@@ -186,7 +187,7 @@ export function Header() {
                     <Link
                       key={c.slug}
                       to={`/${c.slug}`}
-                      className="rounded-lg border border-border bg-card p-3 opacity-80"
+                      className="rounded-lg border border-border bg-card p-3"
                     >
                       <p className="text-sm font-medium text-foreground">{c.title}</p>
                       <p className="text-xs text-muted-foreground">{c.date}</p>
@@ -202,7 +203,8 @@ export function Header() {
               </div>
             )}
           </nav>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   )

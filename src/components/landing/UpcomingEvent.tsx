@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 
 function EmptyState() {
   return (
-    <Card className="w-full max-w-lg shadow-lg shadow-primary/10 border-primary/10">
+    <Card className="w-full max-w-lg shadow-lg shadow-primary/10 border-primary/10 bg-card/70">
       <CardContent className="p-6 text-center">
         <p className="text-xs text-primary font-medium uppercase tracking-wider mb-1">
           Ближайшее событие
