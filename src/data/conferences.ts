@@ -11,6 +11,7 @@ export interface ScheduleItem {
   speaker?: string
   role?: string
   registrationUrl?: string
+  bio?: string
 }
 
 export interface Track {
@@ -23,6 +24,8 @@ export interface Conference {
   slug: string
   title: string
   date: string
+  startsAt: string
+  endsAt: string
   description: string
   telegramPostUrl: string
   location: string
@@ -38,6 +41,8 @@ export const conferences: Conference[] = [
     slug: "амберконф-весна-2026",
     title: "АмберКонф Весна 2026",
     date: "28 марта 2026",
+    startsAt: "2026-03-28T10:00:00+02:00",
+    endsAt: "2026-03-28T19:00:00+02:00",
     description: "Для программистов, разработчиков игр и всех, у кого с информационными технологиями по любви",
     telegramPostUrl: "https://t.me/ambercode/555",
     location: "ДС «Янтарный», ул. Согласия, 39",

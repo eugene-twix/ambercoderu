@@ -26,7 +26,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Dark theme (default) */
 :root {
   --background: #0F172A;
   --foreground: #F8FAFC;
@@ -46,9 +45,9 @@
   --destructive: #EF4444;
   --destructive-foreground: #F8FAFC;
   --radius: 0.75rem;
+  --ease-rise: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Light theme */
 .light {
   --background: #F5F0E8;
   --foreground: #4A3520;
@@ -69,6 +68,16 @@
   --destructive-foreground: #F5F0E8;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  transition: background-color 0.35s ease, color 0.35s ease;
+  scroll-behavior: smooth;
+}
+
 * {
   border-color: var(--border);
 }
@@ -81,4 +90,133 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Animations === */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.45); }
+  50%      { box-shadow: 0 0 0 12px rgba(245, 158, 11, 0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes live-dot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+@keyframes amber-bridge-pulse {
+  0%   { transform: scale(1);   box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.9); }
+  50%  { transform: scale(2.4); box-shadow: 0 0 0 14px rgba(245, 158, 11, 0); }
+  100% { transform: scale(1);   box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+.amber-bridge-pulse {
+  animation: amber-bridge-pulse 0.9s ease-out;
+}
+
+.animate-rise {
+  animation: rise 0.6s var(--ease-rise) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.25s var(--ease-rise) both;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+.animate-live-dot {
+  animation: live-dot 1.4s ease-in-out infinite;
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--card) 0%,
+    var(--muted) 50%,
+    var(--card) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* Staggered children entrance */
+.stagger-rise > * {
+  opacity: 0;
+  animation: rise 0.6s var(--ease-rise) both;
+}
+.stagger-rise > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-rise > *:nth-child(2) { animation-delay: 90ms; }
+.stagger-rise > *:nth-child(3) { animation-delay: 180ms; }
+.stagger-rise > *:nth-child(4) { animation-delay: 270ms; }
+.stagger-rise > *:nth-child(5) { animation-delay: 360ms; }
+.stagger-rise > *:nth-child(6) { animation-delay: 450ms; }
+.stagger-rise > *:nth-child(7) { animation-delay: 540ms; }
+
+/* Smooth theme colour transitions on backgrounds & borders */
+.theme-transition,
+.theme-transition * {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Custom scrollbar for dark surfaces */
+.scrollbar-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 999px;
+}
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee { animation: none !important; }
+  .stagger-rise > * { opacity: 1 !important; }
 }

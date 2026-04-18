@@ -12,10 +12,19 @@ export function BackgroundText() {
     <div
       className="fixed inset-0 z-0 overflow-hidden pointer-events-none select-none"
       aria-hidden="true"
+      style={{
+        maskImage:
+          "radial-gradient(ellipse at center, black 30%, transparent 85%)",
+        WebkitMaskImage:
+          "radial-gradient(ellipse at center, black 30%, transparent 85%)",
+      }}
     >
       <div className="absolute inset-0 flex flex-col justify-around">
         {rows.map((row, i) => (
-          <div key={i} className="relative whitespace-nowrap opacity-[0.04]">
+          <div
+            key={i}
+            className="relative whitespace-nowrap opacity-[0.07] dark:opacity-[0.07]"
+          >
             <div
               className="inline-block animate-marquee"
               style={{
@@ -32,16 +41,6 @@ export function BackgroundText() {
           </div>
         ))}
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee linear infinite;
-        }
-      `}</style>
     </div>
   )
 }
